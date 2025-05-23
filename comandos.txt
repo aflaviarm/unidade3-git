@@ -48,5 +48,5 @@ git commit -m "Adiciona comandos.txt com todos os comandos utilizados"
 
 10. Subir todas as modificações para o repositório remoto
 git remote add origin https://github.com/aflaviarm/unidade3-git.git
-git push -u origin main
+git push -u origin master
 git push origin --tags
