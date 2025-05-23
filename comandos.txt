@@ -1,0 +1,52 @@
+1. Criar diretório e inicializar repositório
+mkdir unidade3-git
+cd unidade3-git
+git init
+
+2. Criar três arquivos e commit inicial
+echo "Conteúdo do arquivo 1" > arquivo1.txt
+echo "Conteúdo do arquivo 2" > arquivo2.txt
+echo "Conteúdo do arquivo 3" > arquivo3.txt
+git add .
+git commit -m "feat: commit inicial com três arquivos"
+
+3. Alterar dois arquivos e examinar alterações
+echo "Nova linha no arquivo 1" >> arquivo1.txt
+echo "Outra modificação no arquivo 2" >> arquivo2.txt
+git status
+git diff
+git add arquivo1.txt arquivo2.txt
+git commit -m "Alterações nos arquivos 1 e 2"
+
+4. Acessar o histórico de diferentes formas
+git log
+git log --oneline
+git log --graph --decorate --all
+git log --stat
+
+5. Reverter a última alteração
+git revert HEAD
+
+6. Nova modificação, stash, mudança de contexto e retomar
+echo "Mudança temporária no arquivo3" >> arquivo3.txt
+git stash save "Mudança temporária no arquivo3"
+git stash list
+git checkout -b nova-linha-desenvolvimento
+git checkout master
+git stash apply
+
+7. Listar registros recentes de movimentação (reflog)
+git reflog
+
+8. Marcar o commit inicial como versão estável
+git log --reverse --oneline
+git tag -a v1.0 -m "Versão estável inicial" 932f779aa88e5c6a3d3d6333278bc79c2a607c76
+
+9. Criar e commitar arquivo de comandos
+git add comandos.txt
+git commit -m "Adiciona comandos.txt com todos os comandos utilizados"
+
+10. Subir todas as modificações para o repositório remoto
+git remote add origin https://github.com/aflaviarm/unidade3-git.git
+git push -u origin main
+git push origin --tags
